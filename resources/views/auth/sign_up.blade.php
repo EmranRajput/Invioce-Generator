@@ -22,7 +22,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 	<link href="assets/css/app.css" rel="stylesheet">
 	<link href="assets/css/icons.css" rel="stylesheet">
-	<title>The Silver foundation</title>
+	<title>Sign up</title>
 </head>
 
 <body class="">
@@ -36,7 +36,7 @@
 
                         <div class="card shadow-none bg-transparent shadow-none rounded-0 mb-0">
 							<div class="card-body">
-                                 <img src="assets/images/login-images/login-cover.svg" class="img-fluid auth-img-cover-login" width="650" alt=""/>
+                                 <img src="assets/images/login-images/register-cover.svg" class="img-fluid auth-img-cover-login" width="550" alt=""/>
 							</div>
 						</div>
 						
@@ -47,51 +47,67 @@
 							<div class="card-body p-sm-5">
 								<div class="">
 									<div class="mb-3 text-center">
-										<img src="assets/images/logo-icon.png" width="60" alt="">
+										<img src="assets/images/logo-icon.png" width="60" alt="" />
 									</div>
 									<div class="text-center mb-4">
 										<h3 class="">The Silver foundation</h3>
                                         <h2 class="">مؤسسة الفضة</h2> 
-										<p class="mb-0" style="font-size: 20px;">Please log in to your account</p>
-                                        <p class="mb-0" style="font-size: 20px;">الرجاء تسجيل الدخول إلى حسابك</p>
+										<h5 class="mb-0">Please create your account</h5>
+										<h5 class="mb-0">
+يرجى إنشاء حسابك</h5>
 									</div>
-
 									<div class="form-body">
-										<form action="{{route('user.login')}}" method="post" class="row g-3">
-											@csrf 
-											<div class="col-12">
-												<label for="inputEmailAddress" style="font-size: 18px;" class="form-label">Email/ بريد إلكتروني</label>
-												<input type="email" name="email" class="form-control" id="inputEmailAddress" placeholder="jhon@example.com">
+										<form action="{{route('user.singup')}}" method="post" enctype="multipart/form-data" class="row g-3">
+    										@csrf
+												<div class="col-12">
+												<label for="inputUsername" class="form-label">Username</label>
+												<input type="text" name="name" class="form-control" id="inputUsername" placeholder="Jhon">
 											</div>
 											<div class="col-12">
-												<label for="inputChoosePassword"  style="font-size: 18px;"class="form-label">Password/كلمة المرور</label>
+												<label for="inputEmailAddress" class="form-label">Email Address</label>
+												<input type="email" name="email" class="form-control" id="inputEmailAddress" placeholder="example@user.com">
+											</div>
+											<div class="col-12">
+												<label for="inputChoosePassword" class="form-label">Password</label>
 												<div class="input-group" id="show_hide_password">
-													<input type="password" name="password" class="form-control border-end-0" id="inputChoosePassword" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
+													<input type="password" name="password" class="form-control border-end-0" id="inputChoosePassword"  placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
 												</div>
 											</div>
-											<div class="col-md-6">
+											<!-- <div class="col-12">
+												<label for="inputChoosePassword" class="form-label">Confirm Password</label>
+												<div class="input-group"  id="show_hide_password">
+													<input type="password" name="password" class="form-control border-end-0" id="inputChoosePassword" value="" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
+												</div>
+											</div> -->
+											<div class="col-12">
+												<label for="inputSelectCountry" class="form-label">Country</label>
+												<select class="form-select" name="country" id="inputSelectCountry" aria-label="Default select example">
+													<option selected value="Saudi Arabia">Saudi Arabia</option>
+													<option value="Dubai">Dubai</option>
+													<option value="Pakistan">Pakistan</option>
+													<option value="Qatar">Qatar</option>
+												</select>
+											</div>
+											<div class="col-12">
 												<div class="form-check form-switch">
 													<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
-													<label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
+													<label class="form-check-label" for="flexSwitchCheckChecked">I read and agree to Terms & Conditions</label>
 												</div>
-											</div>
-											<div class="col-md-6 text-end">	<a href="authentication-forgot-password.html">Forgot Password ?</a>
 											</div>
 											<div class="col-12">
 												<div class="d-grid">
-													<button type="submit" style="font-size: 18px;" class="btn btn-primary">Log in/تسجيل الدخول</button>
+													<button type="submit" class="btn btn-primary">Sign up</button>
 												</div>
 											</div>
 											<div class="col-12">
 												<div class="text-center ">
-													<p class="mb-0">Don't have an account yet? <a href="{{route('singup')}}">Sign up here</a>
-													</p>
+													<p class="mb-0">Already have an account? <a href="{{route('login')}}">Sign in here</a></p>
 												</div>
 											</div>
 										</form>
 									</div>
-									<div class="login-separater text-center mb-5"> <span>OR SIGN IN WITH</span>
-										<hr>
+									<div class="login-separater text-center mb-5"> <span>OR SIGN UP WITH EMAIL</span>
+										<hr/>
 									</div>
 									<div class="list-inline contacts-social text-center">
 										<a href="javascript:;" class="list-inline-item bg-facebook text-white border-0 rounded-3"><i class="bx bxl-facebook"></i></a>
