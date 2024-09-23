@@ -45,6 +45,29 @@ class UserController extends Controller
         Auth::logout();
         return redirect()->route('login');
     }
+
+    public function UserProfile($id){
+        $user = User::find($id);
+        return view('auth.profile', compact('user'));
+    }
+
+    public function UserUpdateProfile(Request $request){
+        $userId = $request->userID;
+
+     if ($request->file('photo')) {
+           $file = $request->file('photo');
+        // @unlink(public_path('upload/instructor_images/'.$data->photo));
+           $filename = date('YmdHi').$file->getClientOriginalName();
+           $file->move(public_path('assets/images/user'),$filename);
+           $data['photo'] = $filename; 
+        }
+        $user = User::find($userId)->update([
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'photo' => $filename,
+        ]);
+        return redirect()->back();
+    }
     
         
     

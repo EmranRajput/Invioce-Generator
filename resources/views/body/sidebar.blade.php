@@ -14,7 +14,7 @@
 					<img src="assets/images/logo_place.png" class="logo-icon" alt="logo icon">
 				</div> -->
 				<div>
-					<img src="assets/images/logo_place.png" class="logo-icon logo-text" style="width: 130px; margin-left:30px;" alt="logo icon">
+					<img src="{{asset('assets/images/logo_place.png')}}" class="logo-icon logo-text" style="width: 130px; margin-left:30px;" alt="logo icon">
 					<!-- <h4 class="logo-text"></h4> -->
 				</div>
 				<div class="toggle-icon ms-auto">

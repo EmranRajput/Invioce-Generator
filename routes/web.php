@@ -29,7 +29,8 @@ Route::get('/signup',[UserController::class, 'Singup'])->name('singup');
 Route::post('/singup',[UserController::class, 'UserSignup'])->name('user.singup');
 Route::get('/logout',[UserController::class, 'Logout'])->name('logout');
 
-
+Route::get('/profile/{id}',[UserController::class,'UserProfile'])->name('user.profile');
+Route::post('profile',[UserController::class, 'UserUpdateProfile'])->name('user.update.profile');
 Route::controller(InvioceController::class)->group(function(){
     Route::get('/new-invoice', 'NewIvoice')->name('new.invioce');
  
