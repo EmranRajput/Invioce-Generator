@@ -32,7 +32,7 @@
 				</li>
 				
 				<li>
-					<a href="javascript:;" class="">
+					<a href="{{route('new.invioce')}}" class="">
 						<div class="parent-icon"><i class='bx bx-note'></i>
 						</div>
 						<div class="menu-title">New Invioce</div>
