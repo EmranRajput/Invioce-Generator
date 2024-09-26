@@ -38,17 +38,25 @@ class UserController extends Controller
         ]);
         
         if(Auth::attempt($credentials)){
-            return redirect()->route('new.invioce');
+            if (Auth::user()->role == 'admin') {
+                return redirect()->route('admin.dashboard'); // Redirect to admin page
+             } else {
+                return redirect()->route('new.invioce'); // Redirect to user page
+                }       
         }
     }
+
+
     public function Logout(){
         Auth::logout();
         return redirect()->route('login');
     }
 
     public function UserProfile($id){
+        if (Auth::check()) {
         $user = User::find($id);
         return view('auth.profile', compact('user'));
+        }
     }
 
     public function UserUpdateProfile(Request $request){

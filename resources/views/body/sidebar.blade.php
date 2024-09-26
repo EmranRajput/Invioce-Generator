@@ -24,13 +24,13 @@
 			
 			<ul class="metismenu" id="menu">
 				<li>
-					<a href="javascript:;" class="">
+					<a href="{{route('admin.dashboard')}}" class="">
 						<div class="parent-icon"><i class='bx bx-home-alt'></i>
 						</div>
 						<div class="menu-title">Dashboard</div>
 					</a>
 				</li>
-				
+				@if(Auth::check() && Auth::user()->role == 'user')
 				<li>
 					<a href="{{route('new.invioce')}}" class="">
 						<div class="parent-icon"><i class='bx bx-note'></i>
@@ -45,7 +45,7 @@
 						<div class="menu-title">My Invioces</div>
 					</a>
 				</li>
-                
+
 				<li>
 					<a href="javascript:;">
 						<div class="parent-icon">
@@ -63,6 +63,15 @@
 						</li>
 						
 					</ul>
+				</li>
+				@endif
+				<li>
+					@if(Auth::check() && Auth::user()->role == 'admin')
+						<a href="{{route('user.list')}}" class="">
+							<div class="parent-icon"><i class='bx bx-file'></i></div>
+							<div class="menu-title">Users</div>
+						</a>
+					@endif
 				</li>
 
 				
