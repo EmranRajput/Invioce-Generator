@@ -1,22 +1,11 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\UserController;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InvioceController;
-
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 // Route::get('/', function () {
 //     return view('create_invioce');
@@ -40,6 +29,13 @@ Route::post('profile',[UserController::class, 'UserUpdateProfile'])->name('user.
 Route::middleware(['auth', 'user'])->group(function () {
     Route::controller(InvioceController::class)->group(function(){
         Route::get('/new-invoice', 'NewIvoice')->name('new.invioce');
+    });
+
+
+    Route::controller(CompanyController::class)->group(function(){
+        Route::get('/company', 'Edit')->name('edit.company');   
+        Route::post('/company', 'Update')->name('update.company');
+
     });
 
 });

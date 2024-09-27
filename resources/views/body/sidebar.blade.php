@@ -55,7 +55,7 @@
 
 					</a>
 					<ul>
-						<li> <a href="app-emailbox.html"><i class='bx bx-radio-circle'></i>Company Update</a>
+						<li> <a href="{{route('edit.company')}}"><i class='bx bx-radio-circle'></i>Update Company</a>
 						</li>
 						<li> <a href="app-chat-box.html"><i class='bx bx-radio-circle'></i>Tex Update</a>
 						</li>

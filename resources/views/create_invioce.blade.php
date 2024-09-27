@@ -14,31 +14,43 @@
 					<div class="card-header crd_header">
 							<div class="row g-3" >
 								<div class="col-12 col-lg-9">
-									<h3 class="mb-0 steper-title">The Silver Renaissance Foundation</h3>
+									<h3 class="mb-0 steper-title">{{$company->name_english}}</h3>
 								</div>
 								<div class="col-12 col-lg-3">
-									<h2 class="mb-0 steper-title">موسسة النهضة الفضية   </h2>
+									<h2 class="mb-0 steper-title">  {{$company->name_other_language}}  </h2>
 								</div>
-								
 							  </div>							
 					</div>
 				    <div class="card-body crd_body">
-					
 					  <div class="bs-stepper-content">
 						<form onSubmit="return false">
 						  <div id="test-l-1" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger1">
 								<div class="row g-3">
-									<div class="col-12 col-lg-10">
-										<h6 class="mb-1">VAT/الرقم الضريبي :</h6>
-										<h6 class="mb-1">CR/س-ت :  </h6>
-										<h6 class="mb-1">Mobile/رقم الجوال:</h6>
-										<!-- <p class="mb-4">Enter your personal information to get closer to copanies</p> -->
-									</div>
+										<div class="col-12 col-lg-10">
+											<!-- VAT -->
+											<div class="d-flex align-items-center mb-2">
+												<h6 class="mb-0">VAT/الرقم الضريبي:</h6>
+												<span class="ms-2">{{ $company->vat }}</span>
+											</div>
+
+											<!-- CR -->
+											<div class="d-flex align-items-center mb-2">
+												<h6 class="mb-0">CR/س-ت:</h6>
+												<span class="ms-2">{{ $company->cr }}</span> <!-- Assuming 'cr_number' is the field -->
+											</div>
+
+											<!-- Mobile -->
+											<div class="d-flex align-items-center mb-4">
+												<h6 class="mb-0">Mobile/رقم الجوال:</h6>
+												<span class="ms-2">{{ $company->phone }}</span> <!-- Assuming 'mobile' is the field -->
+											</div>
+										</div>
+
 									<div class="col-12 col-lg-2">
 										<img src="assets/images/avatars/the_law.png" alt="Admin" class="rounded-circle p-1 " width="110">										
 									</div>
 								</div>
-							<div class="row g-3">
+							<div class="row g-3 ">
 								<div class="col-12 col-lg-3">
 									<label for="FisrtName" class="form-label">CUSTOMER VAT REG/تسجيل العملاء  </label>
 									<div class="input-group">
