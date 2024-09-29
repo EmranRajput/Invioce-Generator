@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class CompanyController extends Controller
 {
     public function Edit(){
-        $company= Company::latest()->get();
+        $company= Company::latest()->first();
         return view('company.company_update', compact('company'));
     }
 

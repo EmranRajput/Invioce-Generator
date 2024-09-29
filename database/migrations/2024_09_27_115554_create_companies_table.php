@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name_english');
             $table->string('name_other_language')->nullable();
+            $table->string('image')->nullable();
             $table->integer('vat');
             $table->integer('cr');
             $table->integer('phone');

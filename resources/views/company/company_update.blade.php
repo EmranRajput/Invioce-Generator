@@ -33,31 +33,29 @@
 						  <div id="test-l-1" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger1">
 							<h5 class="mb-1 fw-bold">Company Update</h5>
 							<p class="mb-4">Enter your company information</p>
-                            @foreach($company as $item)
-                            <input type="hidden" name="company_id" value="{{$item->id}}">
+                            <input type="hidden" name="company_id" value="{{$company->id}}">
 
 							<div class="row g-3">
 								<div class="col-12 col-lg-12">
 									<label for="FisrtName" class="form-label fw-bold">Company Name in English</label>
-									<input type="text" name="name_english" value="{{$item->name_english}}" class="form-control" id="FisrtName" placeholder="Company Name">
+									<input type="text" name="name_english" value="{{$company->name_english}}" class="form-control" id="FisrtName" placeholder="Company Name">
 								</div>
                                 <div class="col-12 col-lg-12">
 									<label for="FisrtName" class="form-label fw-bold">Company Name in Other Language</label>
-									<input type="text" name="name_other_language" value="{{$item->name_other_language}}" class="form-control" id="FisrtName" placeholder="Company Name">
+									<input type="text" name="name_other_language" value="{{$company->name_other_language}}" class="form-control" id="FisrtName" placeholder="Company Name">
 								</div>
 								<div class="col-12 col-lg-4">
 									<label for="LastName" class="form-label fw-bold">Company VAT</label>
-									<input type="text"name="vat" value="{{$item->vat}}" class="form-control" id="LastName" placeholder="Value Added Text Number">
+									<input type="text"name="vat" value="{{$company->vat}}" class="form-control" id="LastName" placeholder="Value Added Text Number">
 								</div>
 								<div class="col-12 col-lg-4">
 									<label for="PhoneNumber" class="form-label fw-bold">Company CR</label>
-									<input type="text" name="cr" value="{{$item->cr}}" class="form-control" id="PhoneNumber" placeholder="Commercial Registration Number">
+									<input type="text" name="cr" value="{{$company->cr}}" class="form-control" id="PhoneNumber" placeholder="Commercial Registration Number">
 								</div>
 								<div class="col-12 col-lg-4">
 									<label for="InputEmail" class="form-label fw-bold">Company Phone No.</label>
-									<input type="text" name="phone" value="{{$item->phone}}" class="form-control" id="InputEmail" placeholder="Company Phone Number">
+									<input type="text" name="phone" value="{{$company->phone}}" class="form-control" id="InputEmail" placeholder="Company Phone Number">
 								</div>
-                                @endforeach
                                 <div class="col-12">
 									<div class="d-flex align-items-center gap-3">
 										<button type="submit" class="btn btn-primary px-4">Update<i class='bx bx-store-alt ms-2'></i></button>

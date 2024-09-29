@@ -23,6 +23,8 @@
 			<!--navigation-->
 			
 			<ul class="metismenu" id="menu">
+				@if(Auth::check() && Auth::user()->role == 'admin')
+
 				<li>
 					<a href="{{route('admin.dashboard')}}" class="">
 						<div class="parent-icon"><i class='bx bx-home-alt'></i>
@@ -30,7 +32,15 @@
 						<div class="menu-title">Dashboard</div>
 					</a>
 				</li>
+				@endif
 				@if(Auth::check() && Auth::user()->role == 'user')
+				<li>
+					<a href="javascript:;" class="">
+						<div class="parent-icon"><i class='bx bx-home-alt'></i>
+						</div>
+						<div class="menu-title">Dashboard</div>
+					</a>
+				</li>
 				<li>
 					<a href="{{route('new.invioce')}}" class="">
 						<div class="parent-icon"><i class='bx bx-note'></i>
