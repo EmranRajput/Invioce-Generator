@@ -21,13 +21,11 @@ Route::post('/login',[UserController::class, 'UserLogin'])->name('user.login');
 Route::get('/signup',[UserController::class, 'Singup'])->name('singup');
 Route::post('/singup',[UserController::class, 'UserSignup'])->name('user.singup');
 Route::get('/logout',[UserController::class, 'Logout'])->name('logout');
-
+//forget passoword
 Route::get('/forget-password',[UserController::class, 'ForgetPasswordForm'])->name('forget.password');
 Route::post('/forget-password',[UserController::class, 'SendVerificationCode'])->name('send.varification.code');
 Route::get('/confirm-otp',[UserController::class, 'ConfirmOTPForm'])->name('confirm.otp');
 Route::post('/confirm-otp',[UserController::class, 'VarifyOTP'])->name('varify.otp');
-
-
 Route::get('/reset-password',[UserController::class, 'ResetPasswordForm'])->name('reset.password');
 Route::post('/reset-password',[UserController::class, 'ResetPassword'])->name('reset.password.post');
 

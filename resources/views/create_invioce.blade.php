@@ -94,61 +94,56 @@
 									</div>
 								</div>
 								<!-- .................... -->
-								<div class="card-body product_details">
-                                        <div class="table-responsive">
-                                            <table class="invoice-table table table-borderless table-nowrap mb-0">
-                                                <thead class="align-middle" style="background-color:#e9ecef;">
-                                                    <tr class="table-active">
-                                                        <th scope="col" style="width: 50px; ">#</th>
-                                                        <th scope="col">
-                                                            Product Details/تفاصيل المنتج
-                                                        </th>
-                                                        <th scope="col" style="width: 120px;">
-                                                            <div class="d-flex currency-select input-light align-items-center">
-                                                                Unit Price/سعر الوحدة
-                                                            </div>
-                                                        </th>
-                                                        <th scope="col" style="width: 120px;">Quantity/الكمية</th>
-                                                        <th scope="col" class="text-end" style="width: 150px;">Amount/كمية</th>
-                                                        <th scope="col" class="text-end" style="width: 105px;"></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="newlink">
-                                                    <tr id="1" class="product">
-                                                        <th scope="row" class="product-id">1</th>
-                                                        <td class="text-start">
-                                                        
-                                                            <textarea class="form-control bg-light border-0" id="productDetails-1" rows="2" placeholder="Product Details"></textarea>
-                                                        </td>
-                                                        <td>
-                                                            <input type="number" class="form-control product-price bg-light border-0" id="productRate-1" step="0.01" placeholder="0.00" required="">
-                                                            <div class="invalid-feedback">
-                                                                Please enter a rate
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="input-step">
-                                                                <button type="button" class="minus">–</button>
-                                                                <input type="number" class="product-quantity" id="product-qty-1" value="0" readonly="">
-                                                                <button type="button" class="plus">+</button>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-end">
-                                                            <div>
-                                                                <input type="text" class="form-control bg-light border-0 product-line-price" id="productPrice-1" placeholder="$0.00" readonly="">
-                                                            </div>
-                                                        </td>
-                                                        <td class="product-removal">
-                                                            <a href="javascript:void(0)" class="btn btn-danger">Delete</a>
-                                                        </td>
-                                                    </tr>
-                                                <tbody>
-                                                    <tr>
-                                                        <td colspan="5">
-                                                            <a href="javascript:new_link()" id="add-item" class="btn btn-info fw-medium" style="  color:aliceblue; border-radius:0px;">
-																<i class="bx bx-plus"></i>Add Item </a>
-                                                        </td>
-                                                    </tr>
+<div class="card-body product_details">
+		<div class="container mt-4">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Product Details</th>
+        <th>Rate</th>
+        <th>Quantity</th>
+        <th class="text-end">Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="newlink">
+      <!-- Existing row structure -->
+      <tr id="1" class="product">
+        <th scope="row" class="product-id">1</th>
+        <td class="text-start">
+          <textarea class="form-control bg-light border-0" id="productDetails-1" rows="2" placeholder="Product Details"></textarea>
+        </td>
+        <td>
+          <input type="number" class="form-control product-price bg-light border-0" id="productRate-1" step="0.01" placeholder="0.00" required="">
+          <div class="invalid-feedback">Please enter a rate</div>
+        </td>
+        <td>
+          <div class="input-step">
+            <button type="button" class="minus">–</button>
+            <input type="number" class="product-quantity" id="product-qty-1" value="0" readonly="">
+            <button type="button" class="plus">+</button>
+          </div>
+        </td>
+        <td class="text-end">
+          <input type="text" class="form-control bg-light border-0 product-line-price" id="productPrice-1" placeholder="$0.00" readonly="">
+        </td>
+        <td class="product-removal">
+          <a href="javascript:void(0)" class="btn btn-danger delete-item">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="5">
+          <a href="javascript:void(0)" id="add-item" class="btn btn-info fw-medium text-white" style="border-radius:0px;">
+            <i class="bx bx-plus"></i> Add Item
+          </a>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
                                                     <tr class="border-top border-top-dashed mt-2">
                                                         <td colspan="3"></td>
                                                         <td colspan="2" class="p-0">
@@ -201,80 +196,7 @@
                                             <a href="javascript:void(0);" class="btn btn-danger"><i class=" bx bx-plane"></i> Send Invoice/يرسل</a>
                                         </div>
                                     </div>
-								<!-- ................ -->
-								<!-- <div class="col-12 col-lg-4">
-									<label for="InputEmail" class="form-label">Description/و صف الصنف  </label>
-									<textarea type="text" class="form-control" id="InputEmail" placeholder="Description Here....."></textarea>
-									<span class="input-group-text input-styling"><i class="bx bx-location"></i></span>
 
-								</div>
-								<div class="col-12 col-lg-2">
-								</div>
-								<div class="col-12 col-lg-2">
-									<label for="FisrtName" class="form-label">QUANTITY/ الامن والسلامة</label>
-									<div class="input-group">
-										<span class="input-group-text input-styling"><i class="bx bx-location"></i></span>
-										<input type="text" class="form-control" id="input27" placeholder="Vat Reg">
-									</div>
-								</div>
-								<div class="col-12 col-lg-2">
-									<label for="FisrtName" class="form-label">UNITE PRICE/ الامن والسلامة</label>
-									<div class="input-group">
-										<span class="input-group-text input-styling"><i class="bx bx-location"></i></span>
-										<input type="text" class="form-control" id="input27" placeholder="Vat Reg">
-									</div>
-								</div>
-								<div class="col-12 col-lg-2">
-									<label for="FisrtName" class="form-label">AMOUNT/ الامن والسلامة</label>
-									<div class="input-group">
-										<span class="input-group-text input-styling"><i class="bx bx-location"></i></span>
-										<input type="text" class="form-control" id="input27" placeholder="Vat Reg">
-									</div>
-								</div>
-								<div class="col-12 col-lg-8">
-									
-								</div>
-								
-								<div class="col-12 col-lg-4">
-									<dl class="row">
-							<dt class="col-sm-9" >SUB TOTAL AMOUNT/المبلغ الإجمالي الفرعي</dt>
-
-							<dd class="col-sm-3">1000</dd>
-						  
-							<dt class="col-sm-4" >DISCOUNT/تخفيض</dt>
-							<dd class="col-sm-5"><input type="text" class="form-control" value="10%" placeholder="Discount" /></dd>
-							<dd class="col-sm-2">100</dd>
-
-						  
-							<dt class="col-sm-9">TOTAL AMOUNT/المبلغ الاجمالي</dt>
-							<dd class="col-sm-3">900 </dd>
-						  </dl>
-								</div>
-								
- -->
-
-					
-								
-								
-								
-
-
-
-								
-								<!-- <div class="col-12 col-lg-6">
-									<label for="InputLanguage" class="form-label">Language</label>
-									<select class="form-select" id="InputLanguage" aria-label="Default select example">
-										<option selected>---</option>
-										<option value="1">One</option>
-										<option value="2">Two</option>
-										<option value="3">Three</option>
-									  </select>
-								</div> -->
-
-
-								<!-- <div class="col-12 col-lg-6">
-									<button class="btn btn-primary px-4" style="margin-left: 40px; background-color: #86888a; color:aliceblue; border-radius:0px;">Save/يحفظ<i class='bx bx-right-arrow-alt ms-2'></i></button>
-								</div> -->
 							</div><!---end row-->
 							
 						  </div>
@@ -292,6 +214,89 @@
 				 </div>
 				<!--end stepper one--> 
                 </div>
-				
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+				<script>
+  $(document).ready(function() {
+    let rowCount = 1;
+
+    // Function to add a new row
+    $('#add-item').click(function() {
+      rowCount++;
+      const newRow = `
+        <tr id="${rowCount}" class="product">
+          <th scope="row" class="product-id">${rowCount}</th>
+          <td class="text-start">
+            <textarea class="form-control bg-light border-0" id="productDetails-${rowCount}" rows="2" placeholder="Product Details"></textarea>
+          </td>
+          <td>
+            <input type="number" class="form-control product-price bg-light border-0" id="productRate-${rowCount}" step="0.01" placeholder="0.00" required="">
+            <div class="invalid-feedback">Please enter a rate</div>
+          </td>
+          <td>
+            <div class="input-step">
+              <button type="button" class="minus">–</button>
+              <input type="number" class="product-quantity" id="product-qty-${rowCount}" value="0" readonly="">
+              <button type="button" class="plus">+</button>
+            </div>
+          </td>
+          <td class="text-end">
+            <input type="text" class="form-control bg-light border-0 product-line-price" id="productPrice-${rowCount}" placeholder="$0.00" readonly="">
+          </td>
+          <td class="product-removal">
+            <a href="javascript:void(0)" class="btn btn-danger delete-item">Delete</a>
+          </td>
+        </tr>
+      `;
+      $('#newlink').append(newRow);
+    });
+
+    // Function to delete a row
+    $('#newlink').on('click', '.delete-item', function() {
+      $(this).closest('tr').remove();
+      updateRowNumbers();
+    });
+
+    // Update row numbers after deletion
+    function updateRowNumbers() {
+      $('#newlink .product').each(function(index) {
+        $(this).attr('id', index + 1);
+        $(this).find('.product-id').text(index + 1);
+        $(this).find('textarea, input').each(function() {
+          const idAttr = $(this).attr('id');
+          if (idAttr) {
+            const newId = idAttr.replace(/\d+$/, index + 1);
+            $(this).attr('id', newId);
+          }
+        });
+      });
+      rowCount = $('#newlink .product').length;
+    }
+
+    // Quantity increment and decrement functionality
+    $('#newlink').on('click', '.plus', function() {
+      const $quantity = $(this).siblings('.product-quantity');
+      $quantity.val(parseInt($quantity.val()) + 1);
+    });
+
+    $('#newlink').on('click', '.minus', function() {
+      const $quantity = $(this).siblings('.product-quantity');
+      const currentValue = parseInt($quantity.val());
+      if (currentValue > 0) {
+        $quantity.val(currentValue - 1);
+      }
+    });
+  });
+//   ..........................
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to calculate line price
+    function calculateLinePrice(rowCount) {
+        const productPrice = parseFloat(document.getElementById(`productRate-${rowCount}`).value) || 0;
+        const productQuantity = parseInt(document.getElementById(`product-qty-${rowCount}`).value) || 0;
+        const linePrice = (productPrice * productQuantity).toFixed(2);
+        
+        document.getElementById(`productPrice-${rowCount}`).value = `$${linePrice}`;
+    }
+});
+</script>
 
     @endsection

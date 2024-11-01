@@ -20,6 +20,7 @@ class CompanyController extends Controller
         'vat' => 'required',
         'cr' => 'required',
         'phone' => 'required',
+        'user_id' => 'required',
      ]); 
 
      $company_data = Company::find($company_id)->update($company);

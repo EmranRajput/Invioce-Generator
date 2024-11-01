@@ -34,6 +34,7 @@
 							<h5 class="mb-1 fw-bold">Company Update</h5>
 							<p class="mb-4">Enter your company information</p>
                             <input type="hidden" name="company_id" value="{{$company->id}}">
+                            <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
 
 							<div class="row g-3">
 								<div class="col-12 col-lg-12">

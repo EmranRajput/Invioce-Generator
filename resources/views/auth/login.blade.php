@@ -22,7 +22,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 	<link href="assets/css/app.css" rel="stylesheet">
 	<link href="assets/css/icons.css" rel="stylesheet">
-	<title>The Silver foundation</title>
+	<title>The Silver Foundation</title>
 </head>
 
 <body class="">
