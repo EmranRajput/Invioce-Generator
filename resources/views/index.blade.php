@@ -90,6 +90,8 @@
 		<footer class="page-footer">
 			<p class="mb-0">Powered By M.Imran</p>
 		</footer>
+
+		@include('notification.notification')
 	</div>
 	<!--end wrapper-->
 

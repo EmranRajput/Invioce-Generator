@@ -32,7 +32,7 @@ class UserController extends Controller
 
         $user = User::create($data);
         if($user){
-            return redirect()->route('login');
+            return redirect()->route('login')->with('success', 'User singup successfully.');
         }
     }
 
@@ -46,15 +46,18 @@ class UserController extends Controller
             if (Auth::user()->role == 'admin') {
                 return redirect()->route('admin.dashboard'); // Redirect to admin page
              } else {
-                return redirect()->route('new.invioce'); // Redirect to user page
+                return redirect()->route('new.invioce')->with('success','user login successfuly.'); // Redirect to user page
                 }       
+        }
+        else{
+            return back()->with('error', 'Credential not match');
         }
     }
 
 
     public function Logout(){
         Auth::logout();
-        return redirect()->route('login');
+        return redirect()->route('login')->with('success', 'user logout successfully.');
     }
 
     public function UserProfile($id){
@@ -79,7 +82,13 @@ class UserController extends Controller
             'phone' => $request->phone,
             'photo' => $filename,
         ]);
-        return redirect()->back();
+        
+        if($user){
+        return redirect()->back()->with('success', 'User profile updated successfully.');
+        } else {
+            return redirect()->back()->with('error', 'Failed to update user profile. Please try again.');
+        }
+       
     }
 
     public function ForgetPasswordForm(){
@@ -110,7 +119,7 @@ class UserController extends Controller
         session(['email' => $request->email]);
 
 
-        return redirect()->route('confirm.otp')->with('success', 'message send succesfully,');
+        return redirect()->route('confirm.otp')->with('success', 'OTP send succesfully,');
     }
 
 // otp form
@@ -135,9 +144,9 @@ class UserController extends Controller
 
         // If the record exists, allow password reset
         if ($resetRecord) {
-            return redirect()->route('reset.password')->with('email', $request->email);
+            return redirect()->route('reset.password')->with('email', $request->email)->with('success', 'OTP varified successfuly.');
         } else {
-            return back()->withErrors(['code' => 'The code is invalid or expired.']);
+            return back()->withErrors(['code' => 'The code is invalid or expired.'])->with('error', 'OTP invalid');
         }
     }
 
