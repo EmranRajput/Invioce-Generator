@@ -54,8 +54,15 @@
                                         <h2 class="">مؤسسة الفضة</h2> 
 										<h5 class="mb-0">Please create your account</h5>
 										<h5 class="mb-0">
-يرجى إنشاء حسابك</h5>
+يرجى إنشاء حسابك					   </h5>
 									</div>
+
+							@if($errors->any())
+								@foreach($errors->all() as $error)
+								<div class="alert alert-danger">{{$error}}</div>
+								@endforeach
+							@endif
+							
 									<div class="form-body">
 										<form action="{{route('user.singup')}}" method="post" enctype="multipart/form-data" class="row g-3">
     										@csrf

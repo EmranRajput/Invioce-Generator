@@ -58,6 +58,13 @@
 										<p class="mb-0" style="font-size: 20px;">Please log in to your account</p>
                                         <p class="mb-0" style="font-size: 20px;">الرجاء تسجيل الدخول إلى حسابك</p>
 									</div>
+		<!-- validation error message here -->
+							@if($errors->any())
+							@foreach($errors->all() as $error)
+							<div class="alert alert-danger">{{$error}}</div>
+							@endforeach
+							@endif
+		<!-- end validation error message here -->
 
 									<div class="form-body">
 										<form action="{{route('user.login')}}" method="post" class="row g-3">
