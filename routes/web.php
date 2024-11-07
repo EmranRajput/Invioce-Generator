@@ -39,6 +39,7 @@ Route::post('profile',[UserController::class, 'UserUpdateProfile'])->name('user.
 Route::middleware(['auth', 'user'])->group(function () {
     Route::controller(InvioceController::class)->group(function(){
         Route::get('/new-invoice', 'NewIvoice')->name('new.invioce');
+        Route::post('new-invioce', 'StoreInvioce')->name('store.invioce');
     });
 
 

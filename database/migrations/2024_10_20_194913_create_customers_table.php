@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('company_id');
-            $table->string('customer_name');
-            $table->string('customer_address');
+            $table->string('customer_name')->nullable();
+            $table->string('customer_address')->nullable();
             $table->string('customer_vat')->nullable();
-            $table->string('payment_type');
-            $table->date('date');
+            $table->string('payment_type')->nullable();
+            $table->date('date')->nullable();
             $table->timestamps();
         });
     }

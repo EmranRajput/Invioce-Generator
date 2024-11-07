@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('customer_id');
-            $table->string('product_detail');
-            $table->string('unite_price');
-            $table->string('quantity');
-            $table->string('amount');
-            $table->string('discount-%');
-            $table->string('discount_amount');
-            $table->string('vat_amount');
+            $table->unsignedBigInteger('customer_id')->nullable();
+            $table->string('product_detail')->nullable();
+            $table->string('unite_price')->nullable();
+            $table->string('quantity')->nullable();
+            $table->string('amount')->nullable();
+            $table->string('discount')->nullable();
+            $table->string('discount_amount')->nullable();
+            $table->string('vat_amount')->nullable();
             $table->string('total_amount');
             $table->timestamps();
         });
